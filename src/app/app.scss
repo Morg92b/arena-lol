@@ -1,0 +1,43 @@
+.app-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.app-header {
+  padding: 2rem 1rem;
+  background: rgba(10, 22, 40, 0.5);
+  border-bottom: 2px solid #0284c7;
+  text-align: center;
+  
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #0284c7, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.5px;
+  }
+}
+
+.app-main {
+  flex: 1;
+  padding: 2rem 1rem;
+  padding-top: 90px;
+  overflow: auto;
+}
+
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .app-main {
+    padding: 1rem 0.5rem;
+  }
+}

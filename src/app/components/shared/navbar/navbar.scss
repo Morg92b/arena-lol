@@ -1,0 +1,132 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: transparent;
+  padding: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+
+  .navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .navbar-brand {
+    flex-shrink: 0;
+
+    h1 {
+      margin: 0;
+      font-size: 1.3rem;
+      background: #ffff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+  }
+
+  .navbar-search {
+    flex: 1;
+    max-width: 400px;
+
+    .search-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: rgba(2, 132, 199, 0.05);
+      border: 1.5px solid #0284c7;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+      height: 40px;
+
+      &:focus-within {
+        background: rgba(2, 132, 199, 0.1);
+        box-shadow: 0 0 20px rgba(2, 132, 199, 0.3);
+        border-color: #06b6d4;
+      }
+
+      .search-icon {
+        width: 18px;
+        height: 18px;
+        color: #0284c7;
+        margin-right: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      .search-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        color: #ffffff;
+        font-size: 0.95rem;
+        outline: none;
+        width: 100%;
+
+        &::placeholder {
+          color: #6b93b8;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0 1000px rgba(10, 22, 40, 0.9) inset;
+          -webkit-text-fill-color: #ffffff;
+        }
+      }
+
+      .clear-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0284c7;
+        transition: all 0.2s ease;
+        margin-left: 0.5rem;
+        flex-shrink: 0;
+
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        &:hover {
+          color: #06b6d4;
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+
+    .navbar-container {
+      gap: 1rem;
+      padding: 0 0.75rem;
+    }
+
+    .navbar-brand h1 {
+      font-size: 1.1rem;
+    }
+
+    .navbar-search {
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="grid">
+  @if (isLoading()) {
+  <div class="loading">
+    <p>Chargement des champions...</p>
+  </div>
+  } @else if (champions().length === 0) {
+  <div class="no-data">
+    <p>Aucun champion trouvé</p>
+  </div>
+  } @else { @for (champion of champions(); track champion.id) {
+  <app-champion-card [champion]="champion" />
+  } }
+</div>

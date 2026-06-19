@@ -1,0 +1,21 @@
+<div class="card" [class.mastered]="progress() === 3">
+  <img
+    [src]="'https://ddragon.leagueoflegends.com/cdn/img/champion/loading/' + champion.id + '_0.jpg'"
+    [alt]="champion.name"
+    loading="lazy"
+  />
+
+  <h3>{{ champion.name }}</h3>
+
+  <div class="buttons">
+    <button (click)="setProgress(0)" [class.active]="progress() === 0">0</button>
+    <button (click)="setProgress(1)" [class.active]="progress() === 1">1</button>
+    <button (click)="setProgress(2)" [class.active]="progress() === 2">2</button>
+    <button (click)="setProgress(3)" [class.active]="progress() === 3">3</button>
+  </div>
+
+  <p>
+    Segments :
+    <strong>{{ progress() }}</strong>
+  </p>
+</div>

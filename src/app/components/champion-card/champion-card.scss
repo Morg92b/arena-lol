@@ -1,0 +1,118 @@
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid #0284c7;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  &.mastered {
+    border: 2px solid #f59e0b;
+    box-shadow:
+      0 0 16px rgba(245, 158, 11, 0.5),
+      0 0 40px rgba(245, 158, 11, 0.15);
+    background: linear-gradient(135deg, rgba(30, 20, 5, 0.9) 0%, rgba(50, 35, 5, 0.9) 100%);
+
+    h3 {
+      color: #f59e0b;
+      text-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+    }
+
+    img {
+      border-color: #f59e0b;
+    }
+
+    .buttons button:last-child.active {
+      background: #f59e0b;
+      color: #1a1000;
+      border-color: #f59e0b;
+      box-shadow: 0 0 8px rgba(245, 158, 11, 0.7);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #06b6d4;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+
+    button {
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, #0284c7, #06b6d4);
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(2, 132, 199, 0.4);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      &.active {
+        background: linear-gradient(135deg, #06b6d4, #0284c7);
+        box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+      }
+    }
+  }
+
+  p {
+    margin: 1rem 0 0;
+    font-size: 0.95rem;
+    color: #8fafca;
+
+    strong {
+      color: #06b6d4;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+
+    img {
+      height: 200px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+}
